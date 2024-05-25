@@ -1,30 +1,31 @@
 // todo: these should use commonjs
-import { readdirSync } from 'fs'
-import { join } from 'path'
+// import { readdirSync } from 'fs'
+// import { join } from 'path'
+const dir = process.cwd()
+const { readdirSync } = require('fs')
+const { join } = require('path')
 
 function readdirRecusiveSync(dir) {
   const dirs = readdirSync(dir, { withFileTypes: true })
   return dirs.reduce(((acc, file) => {
+    console.log(file.name)
+    if (file.name == 'node_modules'){
+      return file.name
+    }
     const filePath = join(dir, file.name)
-    return acc.concat(
-      file.isDirectory() ? readdirRecusiveSync(filePath) : filePath
-    )
+      if (file.isDirectory())  readdirRecusiveSync(filePath)
   }), [])
 }
 
-const crawl = ({ directory }: { directory }) => {
-  const appDirFilelist = readdirRecusiveSync(`./${directory}`)
-  return appDirFilelist.reduce((arr, filePath) => {
-    const splitFilepath = filePath
-    .split('/')
-      const fileName = splitFilepath.at(-1)
-      if (fileName === 'package.json') {
-        const url = filePath.replace(directory, '').replace(/\/\(.*\)/, '').replace('/package.json', '')
+const crawl = (directory) => {
+  const file = readdirRecusiveSync(`${directory}`)
+  console.log(file)
+      if (file === 'node_modules') {
+        console.log('succes You stink')
+        const url = filePath.replace(directory, '').replace(/\/\(.*\)/, '').replace('/node_modules', '')
         arr.push(url)
       }
-      return arr
-    }, [])
-    .filter(s => !!s)
+      // return arr
 }
 
-crawl('.')
+crawl(dir)
