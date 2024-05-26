@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { lstatSync } = require('fs')
 const { isAbsolute, join } = require('path')
 const { search, destroy } = require('./lib/helpers')

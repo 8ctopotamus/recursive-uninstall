@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Recursively uninstall node_modules.",
   "main": "search-and-destroy.js",
+  "bin": "./search-and-destroy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
