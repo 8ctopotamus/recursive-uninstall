@@ -1,2 +1,2 @@
-# recursive-uninstall
-Recursively uninstall node_modules.
+# search-and-destoy
+Recursively delete node_modules.
