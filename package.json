@@ -1,11 +1,22 @@
 {
   "name": "search-and-destroy",
   "version": "1.0.0",
-  "description": "Recursively uninstall node_modules.",
+  "description": "Recursively delete node_modules.",
+  "homepage": "https://github.com/8ctopotamus/search-and-destroy#readme",
   "main": "search-and-destroy.js",
   "bin": "./search-and-destroy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/npm/cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/8ctopotamus/search-and-destroy/issues"
   },
   "keywords": [],
   "author": "",
