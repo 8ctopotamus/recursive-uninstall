@@ -4,7 +4,9 @@
   "description": "Recursively delete node_modules.",
   "homepage": "https://github.com/8ctopotamus/search-and-destroy#readme",
   "main": "search-and-destroy.js",
-  "bin": "./search-and-destroy.js",
+  "bin": {
+    "search-and-destroy": "search-and-destroy.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,8 +14,8 @@
     "lib": "./lib"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/8ctopotamus/search-and-destroy"
+    "type": "git",
+    "url": "git+https://github.com/8ctopotamus/search-and-destroy.git"
   },
   "bugs": {
     "url": "https://github.com/8ctopotamus/search-and-destroy/issues"
