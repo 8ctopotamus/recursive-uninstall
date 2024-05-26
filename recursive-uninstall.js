@@ -1,31 +1,30 @@
-// todo: these should use commonjs
-// import { readdirSync } from 'fs'
-// import { join } from 'path'
 const dir = process.cwd()
-const { readdirSync } = require('fs')
+const { readdirSync, rmSync } = require('fs')
 const { join } = require('path')
+const locations = []
 
 function readdirRecusiveSync(dir) {
   const dirs = readdirSync(dir, { withFileTypes: true })
-  return dirs.reduce(((acc, file) => {
-    console.log(file.name)
+  dirs.forEach((file) =>{
     if (file.name == 'node_modules'){
-      return file.name
-    }
+      locations.push(join(dir, file.name))
+    } else {
     const filePath = join(dir, file.name)
       if (file.isDirectory())  readdirRecusiveSync(filePath)
-  }), [])
+}})
+    return locations
+  }
+
+const search = (directory) => {
+  const files = readdirRecusiveSync(`${directory}`)
+  destroy(files)
 }
 
-const crawl = (directory) => {
-  const file = readdirRecusiveSync(`${directory}`)
-  console.log(file)
-      if (file === 'node_modules') {
-        console.log('succes You stink')
-        const url = filePath.replace(directory, '').replace(/\/\(.*\)/, '').replace('/node_modules', '')
-        arr.push(url)
-      }
-      // return arr
+const destroy = (files) => {
+  files.forEach((file)=> {
+    rmSync(file, {recursive: true, force: true})
+  })
 }
 
-crawl(dir)
+
+search(dir)
