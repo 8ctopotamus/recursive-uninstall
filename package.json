@@ -1,6 +1,6 @@
 {
   "name": "search-and-destroy",
-  "version": "1.0.2",
+  "version": "1.0.25",
   "description": "Recursively delete node_modules.",
   "homepage": "https://github.com/8ctopotamus/search-and-destroy#readme",
   "main": "search-and-destroy.js",
