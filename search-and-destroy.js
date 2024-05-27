@@ -2,7 +2,7 @@
 
 const { lstatSync } = require('fs')
 const { isAbsolute, join } = require('path')
-const { search, destroy } = require('./lib/helpers')
+const { search, destroy, confirm } = require('./lib/helpers')
 
 function determineRootPath() {
   let rootPath = process.argv[2] ? process.argv[2] : process.cwd()
@@ -13,6 +13,13 @@ function determineRootPath() {
   return rootPath
 }
 
-const root = determineRootPath()
-const nmPaths = search(root)
-destroy(nmPaths)
+const init = async () => {
+  const root = determineRootPath();
+  const nmPaths = search(root);
+  await confirm();
+  destroy(nmPaths);
+
+}
+
+
+init()
