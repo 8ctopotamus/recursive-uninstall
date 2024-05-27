@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/8ctopotamus/search-and-destroy/issues"
   },
-  "keywords": [],
+  "keywords": ["recursive", "remove node_modules", "rm -rf node_modules", "cleanup", "save-space"],
   "author": "",
   "license": "ISC"
 }
