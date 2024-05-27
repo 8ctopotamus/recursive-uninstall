@@ -16,7 +16,8 @@ function determineRootPath() {
 const init = async () => {
   const root = determineRootPath();
   const nmPaths = search(root);
-  await confirm();
+  while(await confirm() != true){
+  }
   destroy(nmPaths);
 
 }
