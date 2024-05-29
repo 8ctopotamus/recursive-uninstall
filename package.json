@@ -1,6 +1,6 @@
 {
   "name": "search-and-destroy",
-  "version": "1.0.25",
+  "version": "1.0.3",
   "description": "Recursively delete node_modules.",
   "homepage": "https://github.com/8ctopotamus/search-and-destroy#readme",
   "main": "search-and-destroy.js",
@@ -22,7 +22,5 @@
   },
   "keywords": ["recursive", "remove node_modules", "rm -rf node_modules", "cleanup", "save-space"],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-  }
+  "license": "ISC"
 }
