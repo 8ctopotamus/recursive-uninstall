@@ -1,5 +1,5 @@
-# search-and-destoy
-Recursively delete node_modules.
+# search-and-destroy
+Recursively delete `node_modules`.
 
 ## Usage
 
